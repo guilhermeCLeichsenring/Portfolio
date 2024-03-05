@@ -1,0 +1,100 @@
+<section class="service">
+  <div class="service-mobile">
+    <div class="header-service" (click)="closeContent()">
+      <!-- line -->
+      <img
+        class="line"
+        [ngClass]="{ none: hideLine }"
+        src="assets/element/service-line.png"
+        alt="line"
+      />
+
+      <!-- arrow -->
+      <img
+        class="arrow"
+        [ngClass]="{ none: hideArrow }"
+        src="assets/element/icon _keyboard arrow-up.png"
+        alt="arrow"
+      />
+      <h2>Serviços</h2>
+      <!-- arrow -->
+      <img
+        class="arrow"
+        [ngClass]="{ none: hideArrow }"
+        src="assets/element/icon _keyboard arrow-up.png"
+        alt="arrow"
+      />
+
+      <!-- line -->
+      <img
+        class="line"
+        [ngClass]="{ none: hideLine }"
+        src="assets/element/service-line.png"
+        alt="line"
+      />
+    </div>
+
+    <div class="content" [ngClass]="{ contentShow: showClass }">
+      <p class="p2-r">
+        {{ content }}
+      </p>
+    </div>
+
+    <div class="container-list">
+      <ul>
+        <li
+          class="p1-b"
+          *ngFor="let service of services"
+          (click)="showContent(service.id)"
+          [class.activeButton]="selectedServiceId === service.id"
+        >
+          {{ service.name }}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="service-descktop">
+    <div
+      class="card"
+      (click)="showList()"
+      (mouseenter)="isHover = true"
+      (mouseleave)="isHover = false"
+      [ngClass]="{ cardShadow: hideList }"
+    >
+      <div class="content-start">
+        <h3>Serviços</h3>
+      </div>
+
+      <div class="content-middle" [ngClass]="{ scale: isHover }">
+        <img
+          [ngClass]="{ none: hideImg }"
+          src="assets/element/image-service.png"
+          alt=""
+        />
+        <p class="text" [ngClass]="{ none: hideText }">{{ content }}</p>
+      </div>
+
+      <div class="content-end" [ngClass]="{ moviment: isHover }">
+        <img
+          [ngClass]="{ rotateArrow: hideList }"
+          src="assets/element/arrow-service.png"
+          alt=""
+        />
+      </div>
+    </div>
+
+    <div class="container-list" [ngClass]="{ hideList: hideList }">
+      <ul>
+        <li
+          class="p1-b"
+          *ngFor="let service of services"
+          (click)="showContent(service.id)"
+          [class.activeButton]="selectedServiceId === service.id"
+        >
+          {{ service.name }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

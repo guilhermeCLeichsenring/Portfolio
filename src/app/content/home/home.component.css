@@ -1,0 +1,279 @@
+.header-mobile {
+  height: 653px;
+  position: relative;
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+
+  background: linear-gradient(
+      to bottom,
+      hsla(0, 0%, 16%, 0.3),
+      hsla(141, 37%, 44%, 0.2)
+    ),
+    url(./assets/images/home-mobile.jpg);
+
+  background-position: center;
+  background-size: cover;
+
+  border-radius: 0 0 50px 50px;
+}
+
+.content {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  padding-bottom: 24px;
+  padding-inline: 12px;
+}
+
+.contain .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1,
+h2,
+p,
+span {
+  text-align: center;
+}
+
+/* @keyframes changeTitle {
+  0% {
+    content: "Developer";
+    opacity: 1;
+  }
+
+  17% {
+    content: "Developer";
+    opacity: 0;
+  }
+
+  34% {
+    content: "Design";
+    opacity: 0;
+  }
+
+  51% {
+    content: "Design";
+    opacity: 1;
+  }
+
+  68% {
+    content: "Design";
+    opacity: 0;
+  }
+
+  100% {
+    content: "Developer";
+    opacity: 0;
+  }
+} */
+
+@keyframes changeTitle {
+  0% {
+    content: "Developer";
+  }
+
+  4% {
+    content: "Develope";
+  }
+
+  8% {
+    content: "Develop";
+  }
+
+  12% {
+    content: "Develo";
+  }
+
+  16% {
+    content: "Devel";
+  }
+
+  20% {
+    content: "Deve";
+  }
+
+  24% {
+    content: "Dev";
+  }
+
+  28% {
+    content: "De";
+  }
+
+  32% {
+    content: "Des";
+  }
+
+  36% {
+    content: "Desi";
+  }
+
+  40% {
+    content: "Desig";
+  }
+
+  44% {
+    content: "Design";
+  }
+  48% {
+    content: "Designe";
+  }
+  52% {
+    content: "Designer";
+  }
+
+  56% {
+    content: "Designe";
+  }
+
+  60% {
+    content: "Design";
+  }
+
+  64% {
+    content: "Desig";
+  }
+
+  68% {
+    content: "Desi";
+  }
+  72% {
+    content: "Des";
+  }
+
+  74% {
+    content: "De";
+  }
+
+  78% {
+    content: "Dev";
+  }
+
+  82% {
+    content: "Deve";
+  }
+
+  86% {
+    content: "Devel";
+  }
+
+  90% {
+    content: "Develo";
+  }
+
+  92% {
+    content: "Develop";
+  }
+
+  96% {
+    content: "Develope";
+  }
+
+  100% {
+    content: "Developer";
+  }
+}
+
+.title::after {
+  content: "";
+
+  animation-name: changeTitle;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  transition: 1s ease;
+}
+
+.web-text {
+  height: 40px;
+  bottom: 10;
+  font-weight: 800;
+  -webkit-text-stroke: 1px #fff;
+  color: rgba(255, 255, 255, 0);
+}
+
+.container-img {
+  display: none;
+  flex-direction: row;
+}
+.image {
+  display: none;
+}
+/* ################################################################################################### */
+/* ################################################################################################### */
+/* ################################################################################################### */
+/* ################################################################################################### */
+
+@media (min-width: 1024px) {
+  .header-mobile {
+    background: none;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 960px;
+    gap: 25px;
+  }
+
+  .content {
+    width: 50%;
+    margin-left: 76px;
+  }
+
+  h1,
+  h2,
+  p,
+  span {
+    text-align: start;
+  }
+
+  .web-text {
+    font-size: 200;
+    height: 60px;
+  }
+
+  button {
+    display: none;
+  }
+
+  .container-img {
+    display: block;
+    width: 609px;
+    height: 890px;
+    background-color: var(--green800-color);
+    display: flex;
+    justify-content: end;
+
+    transition: 1s;
+  }
+  .image {
+    display: block;
+    height: 96.8%;
+    width: 95%;
+    box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.39);
+
+    background-image: url(./assets/images/home-descktop.jpg);
+    background-size: cover;
+    transform: scaleX(-1);
+  }
+
+  .text {
+    transition: 1s;
+  }
+
+  .hideText {
+    transform: translateX(-80%);
+    opacity: 0;
+  }
+
+  .hideImg {
+    transform: translate(200px, -400px);
+    opacity: 0;
+  }
+}

@@ -1,0 +1,190 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: end;
+  margin: 0;
+  position: relative;
+}
+
+.header .icons-light {
+  margin: auto;
+  height: 100%;
+  width: 100%;
+}
+
+@keyframes changeIcons {
+  0% {
+    background-image: url(./light/whatsapp=light.png);
+  }
+  25% {
+    background-image: url(./light/linkedin=light.png);
+  }
+  50% {
+    background-image: url(./light/github=light.png);
+  }
+  10% {
+    background-image: url(./light/email=light.png);
+  }
+}
+
+.header .icons-light .image {
+  margin: auto;
+  width: 8.125rem;
+  height: 8.125rem;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.5s ease-in-out;
+  transform: translateY(-5px);
+  background-image: url(./light/whatsapp=light.png);
+
+  animation-name: changeIcons;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+}
+
+.header .title {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  width: 60%;
+  height: 106px;
+  padding-right: 20px;
+  padding-left: 50px;
+
+  background-color: var(--green600-color);
+}
+
+.header h2 {
+  color: var(--neutral800-color);
+}
+.box {
+  padding-top: 12px;
+  background-color: var(--green600-color);
+}
+.contact .list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.list li:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
+  filter: drop-shadow(1px 2px 4px rgba(9, 8, 22, 0.877));
+}
+
+.list li:active {
+  transform: scale(1);
+  transition: 0.2s;
+  filter: drop-shadow(1px 2px 4px rgba(9, 8, 22, 0.877));
+}
+
+.contact .content {
+  color: var(--neutral800-color);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  gap: 10px;
+}
+
+.header .list {
+  display: none;
+}
+
+.content h2 {
+  display: none;
+}
+
+.box .phone {
+  display: none;
+}
+
+/* ################################################################################################### */
+/* ################################################################################################### */
+/* ################################################################################################### */
+/* ################################################################################################### */
+
+@media (max-width: 330px) {
+  .header {
+    position: relative;
+  }
+
+  .header .icons-light .image {
+    margin-left: 1rem;
+    width: 100px;
+    height: 100px;
+  }
+
+  .contact .list {
+    gap: 0;
+  }
+
+  .contact .list li {
+    transform: scale(0.8);
+  }
+}
+
+@media (min-width: 1024px) {
+  .header .title,
+  .box .list,
+  .phone {
+    display: none;
+  }
+
+  .header .list,
+  .box {
+    display: block;
+  }
+  .content h2 {
+    display: inline;
+  }
+
+  .header {
+    width: 100%;
+  }
+
+  .header .icons-light .image {
+    width: 281px;
+    height: 281px;
+  }
+
+  .header .list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 100%;
+    padding: 50px 12px 16px 84px;
+    gap: 16px;
+
+    background-color: var(--green600-color);
+  }
+
+  .box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 600px;
+    padding-bottom: 32px;
+  }
+
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+  }
+
+  .content button {
+    width: 622px;
+    height: 152px;
+    font-size: 2rem;
+  }
+}

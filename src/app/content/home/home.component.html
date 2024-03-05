@@ -1,0 +1,25 @@
+<header class="header-mobile">
+  <div class="content">
+    <div class="text hideText" [ngClass]="{ hideText: !LoadHome }">
+      <p class="p2-b">👋 Olá, eu sou o Guilherme Leichsenring!</p>
+      <h2 class="web-text">Web</h2>
+      <h1 class="title"></h1>
+      <p class="p1-r">
+        Descubra uma abordagem para elevar a sua presença online. Do conceito à
+        implementação, estou comprometido em transformar suas visões em
+        realidade digital.
+      </p>
+    </div>
+
+    <button class="primary-button">
+      <span>Abrir Portifólio</span>
+      <img src="assets/element/arrow-right.png" alt="arrow" />
+    </button>
+
+    <button class="secondary-button">Contrate-me</button>
+  </div>
+
+  <div class="container-img" [ngClass]="{ hideImg: !LoadHome }">
+    <div class="image"></div>
+  </div>
+</header>

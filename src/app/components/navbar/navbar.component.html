@@ -1,0 +1,111 @@
+<div>
+  <!-- Navbar static -->
+  <nav id="navbar1" [ngClass]="{ hideNav: !LoadNav }">
+    <div
+      class="menu-button"
+      (click)="openSideMenu()"
+      [ngClass]="{ hideMenuButton: !hideMenu }"
+    >
+      <img src="assets/element/menu-button.png" alt="menu-button" />
+    </div>
+
+    <button class="secondary-button">Contrate-me</button>
+
+    <ul class="list p3-r">
+      <li *ngFor="let item of navList" (click)="scrollTo(item.id)">
+        {{ item.name }}
+      </li>
+    </ul>
+
+    <img
+      (click)="scrollTo(0)"
+      src="/assets/logo/logo-nav-mobile.png"
+      alt="logo"
+    />
+  </nav>
+
+  <!-- Navbar scroll -->
+
+  <nav id="navbar2" [ngClass]="{ inScroll: isStatic }">
+    <div class="content">
+      <span
+        [ngClass]="{ hideMenuButton: !hideMenu }"
+        class="menu-button"
+        (click)="openSideMenu()"
+      >
+        <img src="assets/element/menu-button.png" alt="menu-button" />
+      </span>
+
+      <button class="third-button">Contrate-me</button>
+
+      <ul class="list p3-r">
+        <li
+          *ngFor="let item of navList"
+          [ngClass]="{ scrollActive: item.active }"
+          (click)="scrollTo(item.id)"
+        >
+          {{ item.name }}
+        </li>
+      </ul>
+
+      <img
+        (click)="scrollTo(0)"
+        src="/assets/logo/logo-nav-mobile.png"
+        alt="logo"
+      />
+    </div>
+  </nav>
+</div>
+
+<!-- SideMenu -->
+
+<div class="sidemenu" [ngClass]="{ hideContent: hideMenu }">
+  <div class="content">
+    <div class="header">
+      <img
+        class="close-button"
+        (click)="closeSideMenu()"
+        src="assets/element/sidemap/close-sidemap.png"
+        alt="close"
+      />
+    </div>
+    <div class="logo">
+      <img src="assets/logo/logo-nav-mobile.png" alt="" />
+      <h4>Guilherme Leichsenring</h4>
+      <p class="p3-r">Web Design, Web Developer & more</p>
+    </div>
+    <hr />
+    <ul class="list p1-b">
+      <li *ngFor="let item of navList" (click)="scrollTo(item.id)">
+        {{ item.name }}
+        <img src="{{ item.url }}" alt="{{ item.name }}" />
+      </li>
+    </ul>
+
+    <ul class="contact-list">
+      <li *ngFor="let icon of contactIcons">
+        <a href="{{ icon.href }}">
+          <svg
+            [attr.width]="icon.width / 3.5"
+            [attr.height]="icon.height / 3.5"
+            [attr.viewBox]="icon.viewBox"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              [attr.d]="icon.image"
+              fill="#D9D9D9"
+            />
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div
+  class="outside"
+  (click)="closeSideMenu()"
+  [ngClass]="{ hideOutside: hideMenu }"
+></div>

@@ -1,0 +1,79 @@
+.bg {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 100000;
+  background-color: rgba(7, 7, 7, 0.712);
+  height: 100vh;
+  width: 100vw;
+}
+.modal {
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+
+  background-color: rgb(255, 255, 255);
+  z-index: 100001;
+  height: 70vh;
+  width: 50vw;
+  border-radius: 20px;
+}
+.header {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: start;
+  flex-direction: row;
+  padding: 32px 10px 12px 30px;
+  width: 100%;
+
+  border-bottom: 1px solid var(--neutral200-color, #eaeaea);
+}
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-inline: 10%;
+  gap: 14px;
+}
+.title img {
+  height: 169px;
+  width: 176px;
+}
+.progress-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+  gap: 10px;
+}
+
+.progress-bar .circle {
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  background-color: var(--neutral200-color);
+}
+
+.progress-bar .active {
+  background-color: var(--neutral600-color);
+}
+
+.container-button1 {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.card1 {
+  z-index: 100001;
+}
+
+.card2 {
+  z-index: 100002;
+}

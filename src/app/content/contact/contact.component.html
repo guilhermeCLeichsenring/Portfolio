@@ -1,0 +1,78 @@
+<section class="contact">
+  <div class="header">
+    <div class="icons-light" id="iconsLight">
+      <div class="image"></div>
+    </div>
+    <ul class="list">
+      <li
+        *ngFor="let icon of contactIcons"
+        (mouseover)="icon.fill = 'rgba(12, 122, 71, 0.247)'"
+        (mouseout)="icon.fill = 'black'"
+      >
+        <a href="{{ icon.href }}">
+          <svg
+            [attr.width]="icon.width * 1.5"
+            [attr.height]="icon.height * 1.5"
+            [attr.viewBox]="icon.viewBox"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              [attr.d]="icon.image"
+              [attr.fill]="icon.fill"
+            />
+          </svg>
+        </a>
+      </li>
+    </ul>
+
+    <div class="title">
+      <h2>Contato</h2>
+    </div>
+  </div>
+
+  <div class="box">
+    <ul class="list">
+      <li
+        *ngFor="let icon of contactIcons"
+        (mouseover)="icon.fill = 'rgba(12, 122, 71, 0.247)'"
+        (mouseout)="icon.fill = 'black'"
+      >
+        <a href="{{ icon.href }}">
+          <svg
+            [attr.width]="icon.width"
+            [attr.height]="icon.height"
+            [attr.viewBox]="icon.viewBox"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              [attr.d]="icon.image"
+              [attr.fill]="icon.fill"
+            />
+          </svg>
+        </a>
+      </li>
+    </ul>
+
+    <div class="content">
+      <h2>Contato</h2>
+      <p class="p1-r">Vamos trabalhar juntos?</p>
+      <button class="third-button">Contrate-me</button>
+      <p class="p1-r">
+        Caso tenha alguma dúvida, entre me contato em uma das plataformas de
+        comunicação listadas.
+      </p>
+    </div>
+
+    <img
+      class="phone"
+      src="assets/element/phone.png"
+      alt="Icone de um telephone"
+    />
+  </div>
+</section>

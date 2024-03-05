@@ -1,0 +1,45 @@
+<footer>
+  <div class="content">
+    <div class="first-content">
+      <img class="logo" src="assets/logo/logo-footer.png" alt="logo" />
+      <p class="p2-r">
+        Este site é uma vitrine do meu trabalho e experiência. Explore meu
+        portfólio para conhecer projetos recentes e descobrir como posso
+        contribuir para o sucesso do seu próximo desafio. Se você tem alguma
+        pergunta ou deseja colaborar, estou à disposição. Vamos criar algo
+        incrível juntos!
+      </p>
+    </div>
+
+    <img class="vertical-line" src="assets/element/vertical-line.png" />
+
+    <hr />
+    <div class="second-content">
+      <ul class="footer-list">
+        <li *ngFor="let icon of contactIcons">
+          <a href="{{ icon.href }}">
+            <svg
+              [attr.width]="icon.width"
+              [attr.height]="icon.height"
+              [attr.viewBox]="icon.viewBox"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                [attr.d]="icon.image"
+                fill="#D9D9D9"
+              />
+            </svg>
+          </a>
+        </li>
+      </ul>
+      <p class="p2-r text-contacts"></p>
+    </div>
+  </div>
+  <p class="p3-b">
+    Desenvolvido com ❤️ por Guilherme Camargo Leichsenring © 2024 Todos os
+    direitos reservados.
+  </p>
+</footer>

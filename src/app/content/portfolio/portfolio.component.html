@@ -1,0 +1,20 @@
+<section class="portfolio">
+  <div
+    class="card"
+    (mouseenter)="isHover = true"
+    (mouseleave)="isHover = false"
+  >
+    <div class="content-start">
+      <h3>Portfólio</h3>
+    </div>
+
+    <div class="content-middle" [ngClass]="{ scale: isHover }">
+      <img src="assets/element/computer-potfolio.png" alt="" />
+      <img src="assets/element/cellphone-portfolio.png" alt="" />
+    </div>
+
+    <div class="content-end">
+      <img src="assets/element/element-portfolio.png" alt="" />
+    </div>
+  </div>
+</section>

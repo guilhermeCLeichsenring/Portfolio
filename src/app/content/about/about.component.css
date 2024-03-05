@@ -1,0 +1,132 @@
+.about {
+  position: relative;
+  height: 620px;
+
+  text-shadow: 2px 1px 4px rgba(179, 52, 52, 0.473);
+}
+.title {
+  color: white;
+  position: absolute;
+  left: 25px;
+  top: 50px;
+  width: 130px;
+}
+.perfil {
+  position: absolute;
+  right: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+  gap: 0;
+  width: 100%;
+  transform: translateY(-15px);
+}
+
+.perfil .photo {
+  height: 357px;
+  width: 325px;
+}
+
+.tech-list {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--green200-color);
+  border: solid 4px var(--green800-color);
+  border-right: 0;
+  border-radius: 10px 0 0 10px;
+  padding: 5px 0 5px 4px;
+  margin: 0;
+}
+
+.tech-list li {
+  transform: scale(0.5);
+}
+
+p {
+  color: var(--neutral200-color);
+}
+.text-mobile {
+  margin-top: 12px;
+  text-align: center;
+  padding-inline: 16px;
+}
+
+.text-descktop {
+  display: none;
+}
+
+/* ################################################################################################### */
+/* ################################################################################################### */
+/* ################################################################################################### */
+/* ################################################################################################### */
+
+@media (max-width: 320px) {
+  .about {
+    height: 662px;
+  }
+
+  .title {
+    z-index: 10;
+    text-shadow: 5px 2px 4px rgba(10, 10, 10, 0.5);
+  }
+}
+
+@media (min-width: 1024px) {
+  .about {
+    position: relative;
+    height: 887px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 120px;
+  }
+
+  .about div:first-child {
+    z-index: 100;
+  }
+
+  .text-descktop {
+    display: inline-block;
+    margin-top: 20px;
+  }
+
+  .skills {
+    width: 80%;
+  }
+
+  .text-mobile {
+    display: none;
+  }
+
+  .title {
+    position: static;
+    width: auto;
+  }
+
+  .perfil {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 0;
+    transform: translateY(0px);
+    width: 40%;
+  }
+
+  .perfil .photo {
+    height: auto;
+    width: 42.4375rem;
+  }
+
+  .tech-list {
+    gap: 60px;
+    padding: 20px 20px 20px 30px;
+  }
+
+  .tech-list li {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,107 @@
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #2d3648;
+  gap: 10px;
+  padding: 25px 10px;
+  align-items: center;
+
+  color: var(--neutral200-color);
+  text-align: center;
+}
+.first-content {
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 48px;
+  height: 42px;
+}
+
+hr {
+  width: 80%;
+}
+
+.footer-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0;
+  width: 100%;
+  margin: 0;
+}
+
+.footer-list li {
+  transform: scale(0.3);
+}
+
+.footer-list li:hover {
+  transform: scale(1);
+  transition: 0.2s;
+  filter: drop-shadow(0px 0px 3px rgba(255, 255, 255, 0.877));
+}
+
+.footer-list li:active {
+  transform: scale(0.9);
+  transition: 0.2s;
+  filter: drop-shadow(0px 0px 1px rgba(255, 255, 255, 0.1));
+}
+
+.text-contacts::after {
+  content: "@guilherme_leichsenring | guicl@live.com | (47) 99995-5656";
+}
+
+.vertical-line {
+  display: none;
+}
+
+/* ################################################################################################### */
+/* ################################################################################################### */
+/* ################################################################################################### */
+/* ################################################################################################### */
+
+@media (min-width: 1024px) {
+  .vertical-line {
+    display: block;
+  }
+
+  hr {
+    display: none;
+  }
+
+  footer {
+    align-items: center;
+  }
+
+  footer .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .first-content {
+    width: 40%;
+  }
+
+  .logo {
+    transform: scale(1);
+    margin-bottom: 24px;
+  }
+
+  .second-content {
+    width: 40%;
+  }
+
+  .footer-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0;
+    width: 100%;
+  }
+  .footer-list li {
+    transform: scale(0.5);
+  }
+}
