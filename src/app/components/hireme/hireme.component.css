@@ -1,15 +1,18 @@
-.bg {
+.modal-container {
   position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
+  z-index: 100001;
+  height: 70vh;
+  width: 50vw;
 
-  z-index: 100000;
-  background-color: rgba(7, 7, 7, 0.712);
-  height: 100vh;
-  width: 100vw;
+  transition: 0.5s;
 }
+
 .modal {
   position: absolute;
 
@@ -20,9 +23,9 @@
   text-align: center;
 
   background-color: rgb(255, 255, 255);
-  z-index: 100001;
-  height: 70vh;
-  width: 50vw;
+  z-index: 100011;
+  height: 100%;
+  width: 100%;
   border-radius: 20px;
 }
 .header {
@@ -35,17 +38,55 @@
 
   border-bottom: 1px solid var(--neutral200-color, #eaeaea);
 }
+
+.header img {
+  transition: 0.2s;
+}
+
+.start .header img:hover,
+.end .header img:hover,
+.middle .header img:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.start .header img:active,
+.end .header img:active {
+  transform: scale(0.9);
+}
+
+.middle .header img:active {
+  transform: scale(0.9);
+  transform: translateX(-10px);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  width: 90%;
+  height: 400px;
+}
+
 .title {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-inline: 10%;
   gap: 14px;
+  width: 80%;
 }
+
+.title h3 {
+  line-height: 1;
+}
+
 .title img {
   height: 169px;
   width: 176px;
 }
+
 .progress-bar {
   display: flex;
   flex-direction: row;
@@ -56,24 +97,262 @@
 
 .progress-bar .circle {
   border-radius: 50%;
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
   background-color: var(--neutral200-color);
+
+  transition: 0.2s;
 }
 
 .progress-bar .active {
   background-color: var(--neutral600-color);
 }
 
-.container-button1 {
+.container-button1,
+.container-button2 {
   box-sizing: border-box;
   width: 100%;
+
+  border-radius: 0px 0px 20px 20px;
 }
 
-.card1 {
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+hr {
+  background-color: var(--neutral200-color);
+  width: 200px;
+  height: 2px;
+  border: none;
+}
+
+.start {
   z-index: 100001;
 }
 
-.card2 {
+.middle {
   z-index: 100002;
+}
+
+.end {
+  z-index: 100005;
+}
+
+.end .content {
+  background-image: url(https://cliply.co/wp-content/uploads/2019/08/371908020_CONFETTI_400px.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  justify-content: center;
+  height: 100%;
+}
+
+.end .title h3 {
+  color: var(--green800-color);
+}
+
+/* ============================== hideCards ============================== */
+.middle,
+.end {
+  transition: all 0.5s;
+}
+
+.hideCard {
+  transform: translateX(100vw);
+  opacity: 0.2;
+}
+
+/* ============================== closeModal ============================== */
+
+.bg {
+  transition: 0.5s;
+}
+
+.hideModal {
+  transform: translate(-50%, 100vh);
+  /* transform: translateY(100vh); */
+  opacity: 0;
+}
+
+.hideBg {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+/* ============================== Input ============================== */
+
+.inputGroup,
+.select-container,
+.text-container {
+  font-family: "Segoe UI", sans-serif;
+  margin: 0.5em 0 0.5em 0;
+  position: relative;
+  width: 100%;
+}
+
+.inputGroup input,
+.select-box,
+.text-box {
+  font-size: 100%;
+  padding: 0.8em;
+  outline: none;
+  border: 2px solid rgb(200, 200, 200);
+  background-color: transparent;
+  border-radius: 20px;
+  width: 100%;
+
+  box-sizing: border-box;
+}
+
+.inputGroup label,
+.select-label,
+.text-label {
+  font-size: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 0.8em;
+  margin-left: 0.5em;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  color: rgb(100, 100, 100);
+}
+
+.inputGroup :is(input:focus, input:valid) ~ label,
+.labelActive {
+  transform: translateY(-50%) scale(0.9);
+  margin: 0em;
+  margin-left: 1.3em;
+  padding: 0.4em;
+  background-color: white;
+}
+
+.inputGroup :is(input:focus, input:valid),
+.borderActive {
+  border-color: rgb(150, 150, 200);
+  box-shadow: 0px 0px 0px 1px rgba(255, 0, 0, 0);
+}
+
+.select-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+
+  height: 44px;
+  padding-right: 0.5em;
+  appearance: none;
+}
+
+.select-box:hover {
+  cursor: pointer;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+}
+
+.icon-container img {
+  width: 20px;
+  padding: 0;
+}
+
+.options-list {
+  position: absolute;
+  top: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 82%;
+  z-index: 100003;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+
+  background-color: var(--neutral100-color);
+  border: 1px solid var(--neutral200-color);
+
+  border-radius: 0px 0px 10px 10px;
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.342);
+
+  transition: opacity 0.8s;
+}
+
+.options-list .option {
+  padding-block: 4px;
+
+  transition: all 0.1s;
+}
+
+.options-list .option:hover {
+  cursor: pointer;
+  background-color: var(--neutral200-color);
+}
+
+.hideList {
+  opacity: 0;
+  height: 1px;
+}
+
+.hideListOption {
+  opacity: 0;
+  display: none;
+}
+
+.rotateArrow {
+  transform: rotate(180deg);
+}
+
+.boxActive {
+  border-color: rgb(150, 150, 200);
+}
+
+/* .labelActive {
+} */
+
+.text-box {
+  border-radius: 10px;
+  max-width: 100%;
+  height: 100px;
+}
+
+.text-box::-webkit-scrollbar {
+  width: 4px;
+  background-color: var(--neutral200-color);
+}
+
+.text-box::-webkit-scrollbar-thumb {
+  background-color: var(--neutral600-color);
+  border-radius: 10px;
+}
+
+.empty {
+  box-shadow: 0px 0px 0px 1px red;
+}
+
+/* ################################################################################################### */
+/* ################################################################################################### */
+/* ################################################################################################### */
+/* ################################################################################################### */
+
+@media (max-width: 768px) {
+  .modal-container {
+    height: 70vh;
+    width: 90vw;
+  }
+  .header {
+    padding-top: 16px;
+  }
+}
+
+@media (max-height: 740px) {
+  .modal-container {
+    height: 90vh;
+  }
 }

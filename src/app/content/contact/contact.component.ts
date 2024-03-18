@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { SharedService } from '../../shared/shared.service';
 
 @Component({
   selector: 'app-contact',
@@ -16,6 +17,12 @@ export class ContactComponent implements OnInit {
   isHovered: boolean = false;
   image: string = '';
   iconId: number = 0;
+
+  constructor(private shared: SharedService) {}
+
+  openHireme() {
+    this.shared.setHiremeOn(true);
+  }
 
   ngOnInit(): void {
     this.contactIcons = this.ContactIcons;

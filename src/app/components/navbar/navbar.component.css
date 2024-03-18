@@ -80,7 +80,7 @@ nav .menu-button:hover {
 /* ============================ SideMenu ============================ */
 
 .sidemenu {
-  z-index: 200;
+  z-index: 201;
   position: fixed;
   top: 0;
   left: 0;
@@ -91,7 +91,7 @@ nav .menu-button:hover {
 }
 
 .outside {
-  z-index: 150;
+  z-index: 200;
   position: fixed;
   top: 0;
   left: 0;
@@ -106,13 +106,12 @@ nav .menu-button:hover {
   justify-content: start;
   align-items: center;
 
-  background-color: var(--neutral800-color);
-
   background: linear-gradient(
-    to bottom,
-    hsla(139, 33%, 87%, 0.439) -90%,
-    hsla(139, 33%, 87%, 0)
-  );
+      to bottom,
+      hsla(139, 33%, 87%, 0.439) -90%,
+      hsla(139, 33%, 87%, 0)
+    ),
+    var(--neutral800-color);
 
   width: 100%;
   height: 100%;
@@ -252,6 +251,7 @@ nav .list {
   nav .list li {
     padding-bottom: 5px;
     transition: 0.2s;
+    cursor: pointer;
   }
 
   #navbar1 .list li:hover {

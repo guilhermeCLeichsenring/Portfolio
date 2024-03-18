@@ -1,42 +1,205 @@
-<div class="bg">
-  <div class="modal card1">
+<div
+  class="bg"
+  (click)="backForm(0)"
+  *ngIf="hireme"
+  [ngClass]="{ hideBg: hideBg }"
+></div>
+<div class="modal-container" [ngClass]="{ hideModal: hideModal }">
+  <!-- Modal start -->
+
+  <div class="modal start">
     <div class="header">
-      <img src="assets/element/hireme/close-hireme.png" alt="close-button" />
+      <img
+        (click)="backForm(0)"
+        src="assets/element/hireme/close-hireme.png"
+        alt="close-button"
+      />
     </div>
-    <div class="title">
-      <img src="assets/logo/logo-hireme.png" alt="logo" />
-      <h3>Hora de construir a solução para o seu negócio!</h3>
-
-      <p class="p2-r">
-        Antes de começarmos precisarei que registre alguns dados para realizar o
-        orçamento e entender mais quais serão nossos objetivos no projeto.
-      </p>
+    <div class="content">
+      <div class="title">
+        <img src="assets/logo/logo-hireme.png" alt="logo" />
+        <h3>Hora de construir a solução para o seu negócio!</h3>
+        <p class="p2-r">
+          Antes de começarmos precisarei que registre alguns dados para realizar
+          o orçamento e entender mais quais serão nossos objetivos no projeto.
+        </p>
+      </div>
     </div>
-
     <div class="container-button1">
-      <button class="button-container">Começar</button>
+      <button class="button-container" (click)="nextForm(0)">Começar</button>
     </div>
   </div>
 
-  <div class="modal card2">
+  <!-- Modal middle -->
+
+  <div class="modal middle" [ngClass]="{ hideCard: hideMain }">
     <div class="header">
-      <img src="assets/element/hireme/arrow-hireme.png" alt="close-button" />
+      <img
+        (click)="backForm(main.id)"
+        src="assets/element/hireme/arrow-hireme.png"
+        alt="close-button"
+      />
     </div>
-    <div class="title">
-      <h3>Quem é Você?</h3>
-      <p class="p2-r">Conte-me sobre você e como podemos entrar em contato.</p>
-    </div>
-    <form action=""></form>
+    <div class="content">
+      <!-- Title -->
 
+      <div class="title">
+        <h3>{{ main.title }}</h3>
+        <p class="p3-r">
+          {{ main.subtitle }}
+        </p>
+      </div>
+
+      <!-- Select1 -->
+
+      <div class="select-container" [ngClass]="{ none: main.hideSelect1 }">
+        <div
+          class="select-box"
+          (click)="showOptions1()"
+          [ngClass]="{ boxActive: selectOn1 }"
+          [ngClass]="{ empty: main.select1.empty }"
+        >
+          <span class="select-label" [ngClass]="{ labelActive: selectOn1 }">
+            {{ main.select1.label }}</span
+          >
+          <span class="select-label">{{ service }}</span>
+          <div class="icon-container">
+            <img
+              [ngClass]="{ rotateArrow: !hideList1 }"
+              src="assets/element/hireme/down_arrow_icon.png"
+              alt=""
+            />
+          </div>
+        </div>
+        <ul class="options-list" [ngClass]="{ hideList: hideList1 }">
+          <li
+            *ngFor="let option of main.select1.options"
+            class="option"
+            (click)="selectOption1(option)"
+            [ngClass]="{ hideListOption: hideList1 }"
+          >
+            {{ option }}
+          </li>
+        </ul>
+      </div>
+
+      <!-- Form1 -->
+      <form class="form1" action="" [ngClass]="{ none: main.hideForm1 }">
+        <div *ngFor="let input of main.form1" class="inputGroup">
+          <input
+            class="empty"
+            [ngClass]="{ empty: input.empty }"
+            [(ngModel)]="input.value"
+            name="{{ input.name }}"
+            type="{{ input.type }}"
+            required="true"
+            autocomplete="off"
+          />
+          <label for="{{ input.name }}">{{ input.placeholder }}</label>
+        </div>
+      </form>
+
+      <!-- Textarea -->
+
+      <div class="text-container" [ngClass]="{ none: true }">
+        <textarea
+          (click)="activeTextArea()"
+          class="text-box p2-r"
+          name="{{ main.text.name }}"
+          id=""
+          [ngClass]="{ borderActive: textOn }"
+        >
+        </textarea>
+        <span
+          class="text-label"
+          [ngClass]="{ labelActive: textOn }"
+          [ngClass]="{ none: main.hideTextarea }"
+        >
+          {{ main.text.name }}
+        </span>
+      </div>
+
+      <hr [ngClass]="{ none: main.hideHr }" />
+
+      <!-- Form2 -->
+      <form class="form2" action="" [ngClass]="{ none: main.hideForm2 }">
+        <div *ngFor="let input of main.form2" class="inputGroup">
+          <input
+            [ngClass]="{ empty: input.empty }"
+            id="{{ input.name }}"
+            name="{{ input.name }}"
+            type="text"
+            required="true"
+            autocomplete="off"
+          />
+          <label for="{{ input.name }}">{{ input.placeholder }}</label>
+        </div>
+      </form>
+
+      <!-- Select2 -->
+      <div class="select-container" [ngClass]="{ none: main.hideSelect2 }">
+        <div
+          class="select-box"
+          (click)="showOptions2()"
+          [ngClass]="{ boxActive: selectOn2 }"
+        >
+          <span class="select-label" [ngClass]="{ labelActive: selectOn2 }">
+            {{ main.select2.label }}</span
+          >
+          <span class="select-label">{{ dayTime }}</span>
+          <div class="icon-container">
+            <img
+              [ngClass]="{ rotateArrow: !hideList2 }"
+              src="assets/element/hireme/down_arrow_icon.png"
+              alt=""
+            />
+          </div>
+        </div>
+        <ul class="options-list" [ngClass]="{ hideList: hideList2 }">
+          <li
+            *ngFor="let option of main.select2.options"
+            class="option"
+            (click)="selectOption2(option)"
+            [ngClass]="{ hideListOption: hideList2 }"
+          >
+            {{ option }}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Progress bar -->
     <ul class="progress-bar">
-      <li class="circle"></li>
-      <li class="circle active"></li>
-      <li class="circle"></li>
-      <li class="circle"></li>
+      <li class="circle" [ngClass]="{ active: main.progressBar[0] }"></li>
+      <li class="circle" [ngClass]="{ active: main.progressBar[1] }"></li>
+      <li class="circle" [ngClass]="{ active: main.progressBar[2] }"></li>
     </ul>
-
     <div class="container-button1">
-      <button class="button-container">Próximo</button>
+      <button (click)="nextForm(main.id)" class="button-container">
+        {{ main.buttonContent }}
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal end -->
+
+  <div class="modal end" [ngClass]="{ hideCard: hideEnd }">
+    <div class="header">
+      <img
+        (click)="backForm(4)"
+        src="assets/element/hireme/close-hireme.png"
+        alt="close-button"
+      />
+    </div>
+    <div class="content">
+      <div class="title">
+        <h3>Tudo Pronto!</h3>
+        <p class="p2-r">
+          Agora é só enviar o email e assim que possível, entraremos em contato.
+        </p>
+      </div>
+    </div>
+    <div class="container-button2">
+      <button class="button-container" (click)="nextForm(4)">Sair</button>
     </div>
   </div>
 </div>

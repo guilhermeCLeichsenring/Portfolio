@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { SharedService } from '../../shared/shared.service';
 
 @Component({
   selector: 'app-home',
@@ -14,4 +15,14 @@ export class HomeComponent {
 
   @Input() LoadHome!: boolean;
   hideHome: boolean = true;
+
+  constructor(private shared: SharedService) {}
+
+  openPortfolio(): void {
+    this.shared.setPortfolioOn(true);
+  }
+
+  openHireme(): void {
+    this.shared.setHiremeOn(true);
+  }
 }

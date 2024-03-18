@@ -35,7 +35,7 @@
     </div>
 
     <div class="content" [ngClass]="{ contentShow: showClass }">
-      <p class="p2-r">
+      <p class="text p2-r">
         {{ content }}
       </p>
     </div>
@@ -87,7 +87,6 @@
     <div class="container-list" [ngClass]="{ hideList: hideList }">
       <ul>
         <li
-          class="p1-b"
           *ngFor="let service of services"
           (click)="showContent(service.id)"
           [class.activeButton]="selectedServiceId === service.id"

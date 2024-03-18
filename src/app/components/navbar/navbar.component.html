@@ -9,7 +9,7 @@
       <img src="assets/element/menu-button.png" alt="menu-button" />
     </div>
 
-    <button class="secondary-button">Contrate-me</button>
+    <button class="secondary-button" (click)="openHireme()">Contrate-me</button>
 
     <ul class="list p3-r">
       <li *ngFor="let item of navList" (click)="scrollTo(item.id)">
@@ -36,7 +36,7 @@
         <img src="assets/element/menu-button.png" alt="menu-button" />
       </span>
 
-      <button class="third-button">Contrate-me</button>
+      <button class="third-button" (click)="openHireme()">Contrate-me</button>
 
       <ul class="list p3-r">
         <li

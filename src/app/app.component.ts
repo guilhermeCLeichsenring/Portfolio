@@ -4,6 +4,7 @@ import {
   ElementRef,
   HostListener,
   Inject,
+  Input,
   PLATFORM_ID,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
@@ -15,9 +16,10 @@ import { AboutComponent } from './content/about/about.component';
 import { ContactComponent } from './content/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { PortfolioComponent } from './content/portfolio/portfolio.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { HiremeComponent } from './components/hireme/hireme.component';
+import { PortfoliocardComponent } from './content/portfoliocard/portfoliocard.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
 
 @Component({
   selector: 'app-root',
@@ -33,9 +35,10 @@ import { HiremeComponent } from './components/hireme/hireme.component';
     ContactComponent,
     FooterComponent,
     NavbarComponent,
-    PortfolioComponent,
     SpinnerComponent,
     HiremeComponent,
+    PortfoliocardComponent,
+    PortfolioComponent,
   ],
 })
 export class AppComponent implements AfterViewInit {
@@ -48,8 +51,6 @@ export class AppComponent implements AfterViewInit {
   cont: any;
 
   loadPage: boolean = false;
-
-  // scroll
 
   constructor(
     private elRef: ElementRef,
@@ -72,9 +73,10 @@ export class AppComponent implements AfterViewInit {
   hideCont: boolean = true;
 
   onSpinner(): void {
+    const timeToStart = 0;
     setTimeout(() => {
       this.loadPage = true;
-    }, 3200);
+    }, timeToStart);
   }
 
   ngAfterViewInit(): void {

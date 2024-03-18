@@ -1,4 +1,5 @@
 <app-spinner id="spinner" [ngClass]="{ hideSpinner: loadPage }"></app-spinner>
+<app-portfolio></app-portfolio>
 <app-hireme></app-hireme>
 
 <div class="wrapper" [ngClass]="{ showWrapper: loadPage }">
@@ -10,10 +11,8 @@
     [LoadNav]="loadPage"
   ></app-navbar>
 
-  <app-portfolio
-    id="portfolio"
-    [ngClass]="{ hideComponent: hidePort }"
-  ></app-portfolio>
+  <app-portfoliocard id="portfolio" [ngClass]="{ hideComponent: hidePort }">
+  </app-portfoliocard>
   <div>
     <app-service
       id="service"

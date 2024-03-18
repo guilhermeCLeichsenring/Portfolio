@@ -1,7 +1,17 @@
-import { Component, HostListener, ElementRef, Input } from '@angular/core';
+import {
+  Component,
+  HostListener,
+  ElementRef,
+  Input,
+  Injectable,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { SharedService } from '../../shared/shared.service';
 
+@Injectable({
+  providedIn: 'root',
+})
 @Component({
   selector: 'app-navbar',
   standalone: true,
@@ -25,7 +35,7 @@ export class NavbarComponent {
   elementsLoc: any[] = [];
   @Input() ElementsLoc!: number[];
 
-  constructor(private elRef: ElementRef) {
+  constructor(private elRef: ElementRef, private shared: SharedService) {
     this.navbar = this.elRef.nativeElement.querySelector('#navbar1');
   }
 
@@ -33,6 +43,18 @@ export class NavbarComponent {
     this.contactIcons = this.ContactIcons;
     this.elementsTop = this.ElementsTop;
     this.elementsLoc = this.ElementsLoc;
+  }
+
+  // Open portfolio
+
+  openPortfolio(): void {
+    this.shared.setPortfolioOn(true);
+  }
+
+  // Open hireme
+
+  openHireme(): void {
+    this.shared.setHiremeOn(true);
   }
 
   //SideMenu
@@ -117,10 +139,14 @@ export class NavbarComponent {
     }
   }
 
-  scrollTo(id: number) {
+  scrollTo(id: number): void {
     const elementTop = this.elementsLoc[id] - 150;
     window.scrollTo({ top: elementTop, behavior: 'smooth' });
 
     this.closeSideMenu();
+
+    if (id == 1) {
+      this.openPortfolio();
+    }
   }
 }

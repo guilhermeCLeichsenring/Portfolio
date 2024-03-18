@@ -44,152 +44,53 @@ span {
   text-align: center;
 }
 
-/* @keyframes changeTitle {
-  0% {
-    content: "Developer";
-    opacity: 1;
-  }
-
-  17% {
-    content: "Developer";
-    opacity: 0;
-  }
-
-  34% {
-    content: "Design";
-    opacity: 0;
-  }
-
-  51% {
-    content: "Design";
-    opacity: 1;
-  }
-
-  68% {
-    content: "Design";
-    opacity: 0;
-  }
-
-  100% {
-    content: "Developer";
-    opacity: 0;
-  }
-} */
-
 @keyframes changeTitle {
   0% {
     content: "Developer";
+    opacity: 1;
   }
 
-  4% {
-    content: "Develope";
+  18% {
+    content: "Developer";
+    opacity: 0;
   }
-
-  8% {
-    content: "Develop";
-  }
-
-  12% {
-    content: "Develo";
-  }
-
-  16% {
-    content: "Devel";
-  }
-
-  20% {
-    content: "Deve";
-  }
-
-  24% {
-    content: "Dev";
-  }
-
-  28% {
-    content: "De";
-  }
-
-  32% {
-    content: "Des";
-  }
-
   36% {
-    content: "Desi";
-  }
-
-  40% {
-    content: "Desig";
-  }
-
-  44% {
-    content: "Design";
-  }
-  48% {
-    content: "Designe";
-  }
-  52% {
     content: "Designer";
+    opacity: 0;
   }
 
-  56% {
-    content: "Designe";
-  }
-
-  60% {
-    content: "Design";
-  }
-
-  64% {
-    content: "Desig";
+  50% {
+    content: "Designer";
+    opacity: 1;
   }
 
   68% {
-    content: "Desi";
-  }
-  72% {
-    content: "Des";
+    content: "Designer";
+    opacity: 0;
   }
 
-  74% {
-    content: "De";
-  }
-
-  78% {
-    content: "Dev";
-  }
-
-  82% {
-    content: "Deve";
-  }
-
-  86% {
-    content: "Devel";
-  }
-
-  90% {
-    content: "Develo";
-  }
-
-  92% {
-    content: "Develop";
-  }
-
-  96% {
-    content: "Develope";
+  85% {
+    content: "Developer";
+    opacity: 0;
   }
 
   100% {
     content: "Developer";
+    opacity: 1;
   }
+}
+
+.title {
+  height: 60px;
+  transition: 1s ease;
 }
 
 .title::after {
   content: "";
 
   animation-name: changeTitle;
-  animation-duration: 10s;
+  animation-duration: 8s;
   animation-iteration-count: infinite;
-  transition: 1s ease;
 }
 
 .web-text {
@@ -224,6 +125,130 @@ span {
   .content {
     width: 50%;
     margin-left: 76px;
+  }
+
+  @keyframes changeTitle-descktop {
+    0% {
+      content: "Developer";
+    }
+
+    4% {
+      content: "Develope";
+    }
+
+    8% {
+      content: "Develop";
+    }
+
+    12% {
+      content: "Develo";
+    }
+
+    16% {
+      content: "Devel";
+    }
+
+    20% {
+      content: "Deve";
+    }
+
+    24% {
+      content: "Dev";
+    }
+
+    28% {
+      content: "De";
+    }
+
+    32% {
+      content: "Des";
+    }
+
+    36% {
+      content: "Desi";
+    }
+
+    40% {
+      content: "Desig";
+    }
+
+    44% {
+      content: "Design";
+    }
+    48% {
+      content: "Designe";
+    }
+    52% {
+      content: "Designer";
+    }
+
+    56% {
+      content: "Designe";
+    }
+
+    60% {
+      content: "Design";
+    }
+
+    64% {
+      content: "Desig";
+    }
+
+    68% {
+      content: "Desi";
+    }
+    72% {
+      content: "Des";
+    }
+
+    74% {
+      content: "De";
+    }
+
+    78% {
+      content: "Dev";
+    }
+
+    82% {
+      content: "Deve";
+    }
+
+    86% {
+      content: "Devel";
+    }
+
+    90% {
+      content: "Develo";
+    }
+
+    92% {
+      content: "Develop";
+    }
+
+    96% {
+      content: "Develope";
+    }
+
+    100% {
+      content: "Developer";
+    }
+  }
+
+  .title {
+    height: auto;
+  }
+
+  .title::after {
+    content: "";
+
+    animation-name: changeTitle-descktop;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    transition: 1s ease;
+  }
+
+  .title {
+    width: 455.5px;
   }
 
   h1,

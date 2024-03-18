@@ -1,3 +1,7 @@
+body {
+  overflow: hidden;
+}
+
 .wrapper {
   background-color: rgb(0, 0, 0);
   z-index: 10000;

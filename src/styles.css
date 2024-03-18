@@ -21,6 +21,23 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+
+  font-family: "Inter", sans-serif;
+
+  overflow-x: hidden;
+}
+
+.bg {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 100000;
+  background-color: rgba(7, 7, 7, 0.712);
+  height: 100vh;
+  width: 100vw;
 }
 
 ul {
@@ -29,6 +46,24 @@ ul {
 
 a {
   text-decoration: none;
+}
+
+body::-webkit-scrollbar {
+  width: 12px;
+  background-color: var(--neutral600-color);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--green600-color);
+  border: 3px solid var(--neutral600-color);
+  border-radius: 10px;
+}
+
+/* Functions */
+
+.hideScroll::-webkit-scrollbar {
+  opacity: 0;
+  overflow: hidden;
 }
 
 .none {
@@ -343,6 +378,7 @@ p {
   font-family: Inter;
   font-size: 1rem;
   font-style: normal;
+  cursor: pointer;
   font-weight: 500;
   line-height: 125%; /* 1.25rem */
   transition: 0.2s;

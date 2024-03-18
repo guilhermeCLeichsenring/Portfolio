@@ -1,0 +1,53 @@
+<div class="bg" [ngClass]="{ hideBg: hideBg }" *ngIf="ifBg"></div>
+<div class="modal-container" [ngClass]="{ hideModal: hideModal }">
+  <div class="header">
+    <img
+      (click)="closePortfolio()"
+      src="assets/element/close-menu-buttom-white.png"
+      alt=""
+    />
+  </div>
+  <div class="content">
+    <div
+      class="project {{ project.bgCard }}"
+      *ngFor="let project of portfolio"
+      (mouseenter)="project.isHover = true"
+      (mouseleave)="project.isHover = false"
+    >
+      <div
+        class="content-start {{ project.bgMainColor }}"
+        [ngClass]="{ containerImgHover: project.isHover }"
+      >
+        <img
+          src="{{ project.img }}"
+          alt=""
+          [ngClass]="{ imgHover: project.isHover }"
+        />
+      </div>
+      <div class="content-end" [ngClass]="{ staticText: !project.isHover }">
+        <h2 class="{{ project.mainColor }}">{{ project.name }}</h2>
+        <ul class="list">
+          <li
+            *ngFor="let tech of project.technologies"
+            class="p3-b technology {{ project.mainColor }}"
+          >
+            {{ tech }}
+          </li>
+        </ul>
+        <p class="p3-r text">
+          {{ project.text }}
+        </p>
+
+        <div class="container-button">
+          <a
+            class="button-rounded"
+            href=""
+            [ngClass]="{ hideButton: !project.isHover }"
+          >
+            <img src="assets/element/arrow-left-port.png" alt="" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
