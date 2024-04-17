@@ -123,7 +123,7 @@ export class HiremeComponent {
         name: 'email',
         placeholder: 'Email*',
         required: true,
-        type: 'email',
+        type: 'text',
         empty: false,
         value: '',
       },

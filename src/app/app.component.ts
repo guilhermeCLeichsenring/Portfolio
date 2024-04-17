@@ -4,7 +4,6 @@ import {
   ElementRef,
   HostListener,
   Inject,
-  Input,
   PLATFORM_ID,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
@@ -105,7 +104,7 @@ export class AppComponent implements AfterViewInit {
 
   @HostListener('window:scroll', ['event'])
   OnScroll() {
-    const windowTop = window.scrollY;
+    const windowTop = window.scrollY + 100;
 
     if (windowTop > this.elementsTop[0]) {
       this.hideHome = false;
