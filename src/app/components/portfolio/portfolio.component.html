@@ -2,12 +2,26 @@
 <div class="modal-container" [ngClass]="{ hideModal: hideModal }">
   <div class="header">
     <img
+      *ngIf="!isWorkActive"
       (click)="closePortfolio()"
       src="assets/element/close-menu-buttom-white.png"
-      alt=""
+      alt="botão de fechar"
+    />
+    <img
+      class="back-button"
+      *ngIf="isWorkActive"
+      (click)="closeWork()"
+      src="assets/element/arrow-right.png"
+      alt="botão de voltar"
     />
   </div>
   <div class="content">
+    <div class="work-container" [ngClass]="{ hideWork: !isWorkActive }">
+      <app-work [Work]="workActive"></app-work>
+    </div>
+    <div class="filterlist-container">
+      <app-filterlist (messageEvent)="getFilter($event)"></app-filterlist>
+    </div>
     <div
       class="project {{ project.bgCard }}"
       *ngFor="let project of portfolio"
@@ -15,7 +29,7 @@
       (mouseleave)="project.isHover = false"
     >
       <div
-        class="content-start {{ project.bgMainColor }}"
+        class="content-start"
         [ngClass]="{ containerImgHover: project.isHover }"
       >
         <img
@@ -39,13 +53,13 @@
         </p>
 
         <div class="container-button">
-          <a
+          <div
+            (click)="selectWork(project)"
             class="button-rounded"
-            href=""
             [ngClass]="{ hideButton: !project.isHover }"
           >
-            <img src="assets/element/arrow-left-port.png" alt="" />
-          </a>
+            <img src="assets/element/arrow-right-port.png" alt="" />
+          </div>
         </div>
       </div>
     </div>

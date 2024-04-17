@@ -1,0 +1,40 @@
+<div class="work {{ work.bgCard }}">
+  <header>
+    <h2 class="{{ work.mainColor }}">{{ work.name }}</h2>
+    <ul>
+      <li
+        *ngFor="let tech of work.technologies"
+        class="p3-b technology {{ work.mainColor }}"
+      >
+        {{ tech }}
+      </li>
+    </ul>
+  </header>
+
+  <section>
+    <div class="topic" *ngFor="let sec of content.sections">
+      <div class="content">
+        <p class="p3-b {{ work.mainColor }}">{{ sec.number }}</p>
+        <h3>{{ sec.title }}</h3>
+
+        <p class="p3-r">{{ sec.text }}</p>
+        <div class="list" *ngIf="sec.list[0] !== ''">
+          <ol>
+            <li *ngFor="let i of sec.list">{{ i }}</li>
+          </ol>
+        </div>
+      </div>
+      <img src="{{ sec.image }}" alt="{{ sec.title }}" />
+    </div>
+  </section>
+  <br />
+  <div class="link">
+    <p class="p1-b">Link para a aplicação:</p>
+
+    <div class="container-button">
+      <a href="{{ content.link.href }}" target="_blank" class="button-rounded">
+        <img src="{{ content.link.icon }}" alt="" />
+      </a>
+    </div>
+  </div>
+</div>

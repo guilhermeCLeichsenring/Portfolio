@@ -1,4 +1,4 @@
-<header class="header-mobile">
+<header class="header">
   <div class="content">
     <div class="text hideText" [ngClass]="{ hideText: !LoadHome }">
       <p class="p2-b">👋 Olá, eu sou o Guilherme Leichsenring!</p>
@@ -19,7 +19,10 @@
     <button class="secondary-button" (click)="openHireme()">Contrate-me</button>
   </div>
 
-  <div class="container-img" [ngClass]="{ hideImg: !LoadHome }">
-    <div class="image"></div>
+  <div class="container-square" [ngClass]="{ hideSquare: !LoadHome }">
+    <div
+      class="inside-square"
+      [ngClass]="{ hideInsideSquare: !LoadHome }"
+    ></div>
   </div>
 </header>

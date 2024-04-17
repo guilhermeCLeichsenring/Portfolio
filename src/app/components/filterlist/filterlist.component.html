@@ -1,0 +1,15 @@
+<div class="filter-list">
+  <ul>
+    <li *ngFor="let filter of filterlist" (click)="selectFilter(filter.name)">
+      <img
+        src="assets/element/filter/{{ filter.name }}/{{ filter.name }}={{
+          filter.state
+        }}.png"
+        alt="{{ filter.name }}"
+      />
+      <div class="tooltip">
+        <p class="p3-r">{{ filter.name }}</p>
+      </div>
+    </li>
+  </ul>
+</div>

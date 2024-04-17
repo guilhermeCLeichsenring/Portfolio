@@ -29,7 +29,8 @@
   width: 325px;
 }
 
-.tech-list {
+.tech-list,
+.tech-list-descktop {
   display: flex;
   flex-direction: row;
   background-color: var(--green200-color);
@@ -53,7 +54,8 @@ p {
   padding-inline: 16px;
 }
 
-.text-descktop {
+.text-descktop,
+.tech-list-descktop {
   display: none;
 }
 
@@ -74,31 +76,29 @@ p {
 }
 
 @media (min-width: 1024px) {
+  .tech-list,
+  .text-mobile {
+    display: none;
+  }
+
   .about {
-    position: relative;
-    height: 887px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-left: 120px;
+    gap: 20px;
+    margin-inline: 5%;
+    margin-bottom: 120px;
   }
 
   .about div:first-child {
     z-index: 100;
+    width: 50%;
   }
 
   .text-descktop {
     display: inline-block;
     margin-top: 20px;
-  }
-
-  .skills {
-    width: 80%;
-  }
-
-  .text-mobile {
-    display: none;
   }
 
   .title {
@@ -110,23 +110,46 @@ p {
     position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: end;
-    gap: 0;
     transform: translateY(0px);
-    width: 40%;
+    width: 50%;
+    height: 100%;
+    gap: 0;
   }
 
   .perfil .photo {
+    width: 400px;
     height: auto;
-    width: 42.4375rem;
+    position: absolute;
+    bottom: 20%;
+    z-index: 2;
   }
 
-  .tech-list {
-    gap: 60px;
-    padding: 20px 20px 20px 30px;
+  .perfil::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 20%;
+    right: 0;
+    width: 400px;
+    height: 200px;
+    z-index: 1;
+    background-color: var(--green800-color);
   }
 
-  .tech-list li {
-    transform: scale(1);
+  .tech-list-descktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px 20px;
+    margin-top: 24px;
+    border-right: solid 4px var(--green800-color);
+    border-radius: 10px;
+  }
+
+  .tech-list-descktop li {
+    transform: scale(0.8);
   }
 }

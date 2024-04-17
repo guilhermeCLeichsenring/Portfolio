@@ -47,11 +47,14 @@ body {
   }
 
   #home,
-  #portfolio,
   #service,
   #about,
   #contact {
     transition: 1s;
+  }
+
+  #portfolio {
+    transition: 6s;
   }
 
   .hideComponent {

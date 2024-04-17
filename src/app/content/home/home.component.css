@@ -1,4 +1,4 @@
-.header-mobile {
+.header {
   height: 653px;
   position: relative;
   display: flex;
@@ -28,6 +28,11 @@
 
   padding-bottom: 24px;
   padding-inline: 12px;
+}
+
+.content p:nth-child(4) {
+  color: var(--neutral200-color);
+  text-shadow: 2px 0px 16px black;
 }
 
 .contain .text {
@@ -81,7 +86,7 @@ span {
 }
 
 .title {
-  height: 60px;
+  height: 70px;
   transition: 1s ease;
 }
 
@@ -114,16 +119,16 @@ span {
 /* ################################################################################################### */
 
 @media (min-width: 1024px) {
-  .header-mobile {
+  .header {
     background: none;
     flex-direction: row;
     justify-content: space-between;
-    height: 960px;
+    height: 740px;
     gap: 25px;
   }
 
   .content {
-    width: 50%;
+    width: 70%;
     margin-left: 76px;
   }
 
@@ -267,38 +272,67 @@ span {
     display: none;
   }
 
-  .container-img {
-    display: block;
-    width: 609px;
-    height: 890px;
-    background-color: var(--green800-color);
+  .container-square {
     display: flex;
-    justify-content: end;
+    justify-content: start;
+    align-items: end;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    padding: 24px;
+    width: 442px;
+    height: 628px;
+    background-color: var(--green800-color);
 
-    transition: 1s;
+    transition: 2s;
   }
-  .image {
+  .inside-square {
+    position: relative;
     display: block;
-    height: 96.8%;
-    width: 95%;
-    box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.39);
+    height: 330px;
+    width: 330px;
+    background-color: #1a202c;
 
-    background-image: url(./assets/images/home-descktop.jpg);
-    background-size: cover;
-    transform: scaleX(-1);
+    transition: 4s;
+  }
+
+  .inside-square::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    height: 140px;
+    width: 140px;
+    border-left: dashed var(--green800-color) 3px;
+    border-top: dashed var(--green800-color) 3px;
+
+    transition: 4s;
   }
 
   .text {
     transition: 1s;
   }
 
+  /* ============================== opening page ============================== */
+
   .hideText {
     transform: translateX(-80%);
     opacity: 0;
   }
 
-  .hideImg {
-    transform: translate(200px, -400px);
+  .hideSquare {
+    transform: translateX(600px);
+    opacity: 0;
+  }
+
+  .hideInsideSquare {
+    transform: translateX(80px);
+    opacity: 0;
+  }
+
+  .hideInsideSquare:after {
+    transform: translate(100px, 40px);
     opacity: 0;
   }
 }

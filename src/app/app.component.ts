@@ -73,7 +73,7 @@ export class AppComponent implements AfterViewInit {
   hideCont: boolean = true;
 
   onSpinner(): void {
-    const timeToStart = 0;
+    const timeToStart = 3000;
     setTimeout(() => {
       this.loadPage = true;
     }, timeToStart);

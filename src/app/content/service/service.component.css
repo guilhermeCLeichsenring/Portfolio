@@ -137,6 +137,15 @@
 /* ################################################################################################### */
 
 @media (min-width: 1024px) {
+  .card {
+    background-color: #1a202c;
+    border: solid 4px var(--green600-color);
+  }
+
+  .card h3 {
+    color: var(--green600-color);
+  }
+
   .service-mobile {
     display: none;
   }
@@ -177,14 +186,13 @@
     transform: scale(1);
   }
 
-  .service .content-middle {
-  }
   .service .content-middle .text {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
     text-align: center;
+    color: var(--neutral200-color);
     max-width: 300px;
     height: 100%;
   }
@@ -193,7 +201,9 @@
     transition: 1s;
   }
   .service .container-list {
-    background-color: var(--green200-color);
+    background-color: hsla(141, 33%, 61%, 0.4);
+    border: solid 2px var(--green600-color);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
     overflow-x: none;
     width: 65%;
     border-radius: 0px 0px 20px 20px;

@@ -11,7 +11,7 @@
     [LoadNav]="loadPage"
   ></app-navbar>
 
-  <app-portfoliocard id="portfolio" [ngClass]="{ hideComponent: hidePort }">
+  <app-portfoliocard id="portfolio" [ngClass]="{ hideComponent: !loadPage }">
   </app-portfoliocard>
   <div>
     <app-service
